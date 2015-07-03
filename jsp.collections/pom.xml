@@ -4,7 +4,7 @@
   <groupId>com.github.aidanPB</groupId>
   <artifactId>jsp.collections</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1</version>
   <name>JSP Collections Taglib</name>
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
