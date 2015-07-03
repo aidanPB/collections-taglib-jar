@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib version="2.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd ">
+    <description>
+        JSP Tags intended to ease the use of the Java Collections Framework in JSP documents.
+    </description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>jcfTags</short-name>
+    <uri>github.com/aidanPB/jsp-collections-taglib.tld</uri>
+    <tag>
+        <description>
+            Iterate over an instance of java.util.List, evaluating the tag's body for each
+            element contained therein.
+        </description>
+        <display-name>For Each in List</display-name>
+        <name>forEachInList</name>
+        <tag-class>com.github.aidanPB.jsp.collections.ForEachInList</tag-class>
+        <body-content>JSP</body-content>
+        <variable>
+            <description>The current index into the List.</description>
+            <name-from-attribute>indexVar</name-from-attribute>
+            <variable-class>java.lang.Integer</variable-class>
+        </variable>
+        <variable>
+            <description>The value in the List at the current index.</description>
+            <name-from-attribute>valueVar</name-from-attribute>
+            <variable-class>java.lang.Object</variable-class>
+        </variable>
+        <attribute>
+            <description>The list over which to iterate.</description>
+            <name>collection</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List</type>
+            <deferred-value>
+                <type>java.util.List</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>The index from which to start iterating. Default is 0.</description>
+            <name>from</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Integer</type>
+            <deferred-value>
+                <type>java.lang.Integer</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>The index at which to stop iterating. Default is collection.size() - 1.</description>
+            <name>to</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Integer</type>
+            <deferred-value>
+                <type>java.lang.Integer</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The quantity by which to increment or decrement the index while iterating.
+                Default is 1.
+            </description>
+            <name>step</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Integer</type>
+            <deferred-value>
+                <type>java.lang.Integer</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+    <tag>
+        <description>
+            Iterate over an instance of java.util.Map, evaluating the tag's body for each
+            key-value pair.
+        </description>
+        <display-name>For Each in Map</display-name>
+        <name>forEachInMap</name>
+        <tag-class>com.github.aidanPB.jsp.collections.ForEachInMap</tag-class>
+        <body-content>JSP</body-content>
+        <variable>
+            <description>The key in the map for the current iteration.</description>
+            <name-from-attribute>keyVar</name-from-attribute>
+        </variable>
+        <variable>
+            <description>The value in the map corresponding to the current key.</description>
+            <name-from-attribute>valueVar</name-from-attribute>
+            <variable-class>java.lang.Object</variable-class>
+        </variable>
+        <attribute>
+            <description>The map over which to iterate.</description>
+            <name>collection</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.Map</type>
+            <deferred-value>
+                <type>java.util.Map</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                An array of keys to use. If this attribute is unset, use every key in the map.
+            </description>
+            <name>keys</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String[]</type>
+            <deferred-value>
+                <type>java.lang.String[]</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>An UnaryPredicate with which to filter keys.</description>
+            <name>keyFilter</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>org.apache.commons.functor.UnaryPredicate</type>
+            <deferred-value>
+                <type>org.apache.commons.functor.UnaryPredicate</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+    <tag>
+        <description>
+            Iterate over the values of an indexed property, evaluating the tag's body for
+            each index and element.
+        </description>
+        <display-name>For-Each: Indexed Property</display-name>
+        <name>forEachIndexedProperty</name>
+        <tag-class>com.github.aidanPB.jsp.collections.ForEachIndexedProperty</tag-class>
+        <body-content>JSP</body-content>
+        <variable>
+            <description>The current index into the property.</description>
+            <name-from-attribute>indexVar</name-from-attribute>
+            <variable-class>java.lang.Integer</variable-class>
+        </variable>
+        <variable>
+            <description>The value of the property at the current index.</description>
+            <name-from-attribute>valueVar</name-from-attribute>
+            <variable-class>java.lang.Object</variable-class>
+        </variable>
+        <attribute>
+            <description>The id of the bean that has the indexed property.</description>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>The name of the property over which this tag iterates.</description>
+            <name>property</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>The index from which to start iterating. Default is 0.</description>
+            <name>from</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Integer</type>
+            <deferred-value>
+                <type>java.lang.Integer</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The index at which to stop iterating. Default is the last index
+                of the property.
+            </description>
+            <name>to</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Integer</type>
+            <deferred-value>
+                <type>java.lang.Integer</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>
+                The quantity by which to increment or decrement the index while iterating.
+                Default is 1.
+            </description>
+            <name>step</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.Integer</type>
+            <deferred-value>
+                <type>java.lang.Integer</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+    <tag>
+        <description>
+            Iterate over the entries in a mapped property, evaluating the tag's body for
+            each key-value pair.
+        </description>
+        <display-name>For-Each: Mapped Property</display-name>
+        <name>forEachMappedProperty</name>
+        <tag-class>com.github.aidanPB.jsp.collections.ForEachMappedProperty</tag-class>
+        <body-content>JSP</body-content>
+        <variable>
+            <description>The key in the property for the current iteration.</description>
+            <name-from-attribute>keyVar</name-from-attribute>
+        </variable>
+        <variable>
+            <description>The value of the property corresponding to the current key.</description>
+            <name-from-attribute>valueVar</name-from-attribute>
+            <variable-class>java.lang.Object</variable-class>
+        </variable>
+        <attribute>
+            <description>The id of the bean that has the mapped property.</description>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>The name of the property over which this tag iterates.</description>
+            <name>property</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <description>
+                An array of keys to use. If this attribute is unset, attempt to discover
+                the property's entire key set, and use that.
+            </description>
+            <name>keys</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String[]</type>
+            <deferred-value>
+                <type>java.lang.String[]</type>
+            </deferred-value>
+        </attribute>
+        <attribute>
+            <description>An UnaryPredicate with which to filter keys.</description>
+            <name>keyFilter</name>
+            <rtexprvalue>true</rtexprvalue>
+            <type>org.apache.commons.functor.UnaryPredicate</type>
+            <deferred-value>
+                <type>org.apache.commons.functor.UnaryPredicate</type>
+            </deferred-value>
+        </attribute>
+    </tag>
+</taglib>

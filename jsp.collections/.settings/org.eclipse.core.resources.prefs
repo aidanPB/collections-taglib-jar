@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachInList.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachInMap.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachIndexedProperty.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachIndexedTag.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachIndexedTagSupport.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachJCFTag.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachMappedProperty.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachMappedTag.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachMappedTagSupport.java=UTF-8
+encoding//src/main/java/com/github/aidanPB/jsp/collections/ForEachPropertyTag.java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/collections-tags.tld=UTF-8
+encoding//src/test/java=UTF-8
